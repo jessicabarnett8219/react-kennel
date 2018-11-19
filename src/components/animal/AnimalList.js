@@ -4,11 +4,6 @@ import "./Animal.css"
 
 class AnimalList extends Component {
 
-
-
-
-
-
   render() {
     return (
       <section className="animals list">
@@ -20,8 +15,8 @@ class AnimalList extends Component {
                   <img src={dog} className="icon--dog" />
                   {animal.name}
                   <a href="#"
-                    onClick={() => this.props.deleteAnimal(animal.id)}
-                    className="card-link">Delete</a>
+                    onClick={() => this.props.getAnimalOwners(animal.id)}
+                    className="card-link">See Owners</a>
                 </h5>
               </div>
             </div>
