@@ -9,7 +9,11 @@ class OwnerList extends Component {
           this.props.owners.map(owner =>
             <div key={owner.id}>
               <h3>{owner.name}</h3>
-              <p>{owner.phoneNumber}</p>
+              <p>
+                <a href="#" onClick={() => this.props.deleteOwner(owner.id)}
+                  className="card-link">Delete
+                </a>
+              </p>
             </div>
           )
         }
