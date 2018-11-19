@@ -75,6 +75,13 @@ class ApplicationViews extends Component {
       )
   }
 
+  getAnimalOwners = (arr, currId) => {
+    return arr.map(pair => {
+      if (pair.animalId === currId) {
+        return <p key={pair.id}>{pair.owner.name}</p>
+      }
+    })
+  }
 
   render() {
     return (
@@ -83,7 +90,7 @@ class ApplicationViews extends Component {
           return <LocationList locations={this.state.locations} />
         }} />
         <Route path="/animals" render={(props) => {
-          return <AnimalList deleteAnimal={this.deleteAnimal} animals={this.state.animals} owners_animals={this.state.owners_animals} />
+          return <AnimalList deleteAnimal={this.deleteAnimal} animals={this.state.animals} owners_animals={this.state.owners_animals} getAnimalOwners={this.getAnimalOwners}/>
         }} />
         <Route path="/employees" render={(props) => {
           return <EmployeeList deleteEmployee={this.deleteEmployee} employees={this.state.employees} />
