@@ -120,6 +120,11 @@
       "ownerId": 5
     },
     {
+      "id": 6,
+      "animalId": 6,
+      "ownerId": 1
+    },
+    {
       "id": 7,
       "animalId": 1,
       "ownerId": 7

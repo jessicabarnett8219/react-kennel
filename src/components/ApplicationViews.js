@@ -30,6 +30,9 @@ class ApplicationViews extends Component {
       .then(() => fetch("http://localhost:5002/locations"))
       .then(r => r.json())
       .then(locations => newState.locations = locations)
+      .then(() => fetch("http://localhost:5002/owners_animals/?_expand=owner&_expand=animal"))
+      .then(r => r.json())
+      .then(owners_animals => newState.owners_animals = owners_animals)
       .then(() => this.setState(newState))
   }
 
@@ -46,7 +49,7 @@ class ApplicationViews extends Component {
       )
   }
 
-  deleteEmployee= id => {
+  deleteEmployee = id => {
     return fetch(`http://localhost:5002/employees/${id}`, {
       method: "DELETE"
     })
@@ -70,18 +73,7 @@ class ApplicationViews extends Component {
         owners: owners
       })
       )
-    }
-
-    getAnimalOwners = (id) => {
-      return fetch(`http://localhost:5002/owners_animals/?animalId=${id}&_expand=owner`)
-      .then( r => r.json())
-      .then ( arr => {
-        let ownerArray = []
-        arr.forEach(obj => ownerArray.push(obj.owner.name))
-        return ownerArray
-      })
-      .then (r => console.log(r))
-    }
+  }
 
 
   render() {
@@ -91,7 +83,7 @@ class ApplicationViews extends Component {
           return <LocationList locations={this.state.locations} />
         }} />
         <Route path="/animals" render={(props) => {
-          return <AnimalList deleteAnimal={this.deleteAnimal} animals={this.state.animals} getAnimalOwners={this.getAnimalOwners}/>
+          return <AnimalList deleteAnimal={this.deleteAnimal} animals={this.state.animals} owners_animals={this.state.owners_animals} />
         }} />
         <Route path="/employees" render={(props) => {
           return <EmployeeList deleteEmployee={this.deleteEmployee} employees={this.state.employees} />
