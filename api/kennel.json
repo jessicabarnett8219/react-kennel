@@ -27,10 +27,6 @@
   ],
   "animals": [
     {
-      "id": 1,
-      "name": "Doodles"
-    },
-    {
       "id": 2,
       "name": "Jack"
     },
@@ -95,11 +91,6 @@
   ],
   "owners_animals": [
     {
-      "id": 1,
-      "animalId": 1,
-      "ownerId": 1
-    },
-    {
       "id": 2,
       "animalId": 2,
       "ownerId": 2
@@ -123,11 +114,6 @@
       "id": 6,
       "animalId": 6,
       "ownerId": 1
-    },
-    {
-      "id": 7,
-      "animalId": 1,
-      "ownerId": 7
     },
     {
       "id": 9,
