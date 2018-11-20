@@ -8,7 +8,7 @@ import AnimalManager from "../modules/AnimalManager"
 import LocationManager from "../modules/LocationManager"
 import OwnerManager from "../modules/OwnerManager"
 import EmployeeManager from "../modules/EmployeeManager"
-import OwnersAnimalsManager from "../modules/OwnersAnimalsManger"
+import OwnersAnimalsManager from "../modules/OwnersAnimalsManager"
 
 class ApplicationViews extends Component {
 
@@ -22,13 +22,13 @@ class ApplicationViews extends Component {
 
   componentDidMount() {
     const newState = {}
-    AnimalManager.getAll()
+    AnimalManager.all()
       .then(animals => newState.animals = animals)
-      .then(() => EmployeeManager.getAll())
+      .then(() => EmployeeManager.all())
       .then(employees => newState.employees = employees)
-      .then(() => OwnerManager.getAll())
+      .then(() => OwnerManager.all())
       .then(owners => newState.owners = owners)
-      .then(() => LocationManager.getAll())
+      .then(() => LocationManager.all())
       .then(locations => newState.locations = locations)
       .then(() => OwnersAnimalsManager.getAll())
       .then(owners_animals => newState.owners_animals = owners_animals)
