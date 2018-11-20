@@ -7,10 +7,6 @@
     {
       "id": 3,
       "name": "Zoe LeBlanc"
-    },
-    {
-      "id": 4,
-      "name": "Blaise Roberts"
     }
   ],
   "locations": [
@@ -27,20 +23,12 @@
   ],
   "animals": [
     {
-      "id": 2,
-      "name": "Jack"
-    },
-    {
       "id": 3,
       "name": "Angus"
     },
     {
       "id": 4,
       "name": "Henley"
-    },
-    {
-      "id": 5,
-      "name": "Derkins"
     },
     {
       "id": 6,
@@ -65,20 +53,12 @@
       "name": "Jonathan Beam"
     },
     {
-      "id": 5,
-      "name": "Fletcher Bangs"
-    },
-    {
       "id": 6,
       "name": "Angela Lee"
     },
     {
       "id": 7,
       "name": "Ryan Tanay"
-    },
-    {
-      "id": 8,
-      "name": "Wally Barnett"
     },
     {
       "id": 9,
@@ -91,11 +71,6 @@
   ],
   "owners_animals": [
     {
-      "id": 2,
-      "animalId": 2,
-      "ownerId": 2
-    },
-    {
       "id": 3,
       "animalId": 3,
       "ownerId": 3
@@ -104,11 +79,6 @@
       "id": 4,
       "animalId": 4,
       "ownerId": 4
-    },
-    {
-      "id": 5,
-      "animalId": 5,
-      "ownerId": 5
     },
     {
       "id": 6,
