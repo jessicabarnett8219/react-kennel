@@ -13,8 +13,8 @@ export default class APIManager {
 
   }
 
-  all() {
-    return fetch(`${remoteURL}/${this.resource}`)
+  all(...search) {
+    return fetch(`${remoteURL}/${this.resource}${search}`)
     .then(data => data.json())
   }
 }

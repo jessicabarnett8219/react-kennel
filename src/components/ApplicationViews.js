@@ -30,7 +30,7 @@ class ApplicationViews extends Component {
       .then(owners => newState.owners = owners)
       .then(() => LocationManager.all())
       .then(locations => newState.locations = locations)
-      .then(() => OwnersAnimalsManager.all())
+      .then(() => OwnersAnimalsManager.getAll())
       .then(owners_animals => newState.owners_animals = owners_animals)
       .then(() => this.setState(newState))
   }
