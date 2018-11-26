@@ -10,6 +10,7 @@ import OwnerManager from "../modules/OwnerManager"
 import EmployeeManager from "../modules/EmployeeManager"
 import OwnersAnimalsManager from "../modules/OwnersAnimalsManager"
 import AnimalDetail from './animal/AnimalDetail'
+import EmployeeDetail from "./employee/EmployeeDetail"
 
 class ApplicationViews extends Component {
 
@@ -76,9 +77,12 @@ class ApplicationViews extends Component {
         <Route exact path="/" render={(props) => {
           return <LocationList locations={this.state.locations} />
         }} />
-        <Route path="/employees" render={(props) => {
+        <Route exact path="/employees" render={(props) => {
           return <EmployeeList employees={this.state.employees} />
         }} />
+        <Route path="/employees/:employeeId(\d+)" render={(props) => {
+          return <EmployeeDetail {...props} employees={this.state.employees} deleteEmployee={this.deleteEmployee}/>
+        }}/>
         <Route path="/owners" render={(props) => {
           return <OwnerList owners={this.state.owners} />
         }} />

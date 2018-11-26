@@ -2,11 +2,13 @@
   "employees": [
     {
       "id": 2,
-      "name": "Jordan Nelson"
+      "name": "Jordan Nelson",
+      "phone": "502-338-0908"
     },
     {
       "id": 3,
-      "name": "Zoe LeBlanc"
+      "name": "Zoe LeBlanc",
+      "phone": "859-825-8824"
     }
   ],
   "locations": [
@@ -22,11 +24,6 @@
     }
   ],
   "animals": [
-    {
-      "id": 1,
-      "name": "George",
-      "breed": "Golden Retriever"
-    },
     {
       "id": 2,
       "name": "Wally",
@@ -79,11 +76,6 @@
   ],
   "owners_animals": [
     {
-      "id": 1,
-      "ownerId": 1,
-      "animalId": 1
-    },
-    {
       "id": 2,
       "ownerId": 2,
       "animalId": 2
@@ -97,11 +89,6 @@
       "id": 4,
       "ownerId": 4,
       "animalId": 4
-    },
-    {
-      "id": 5,
-      "ownerId": 6,
-      "animalId": 1
     }
   ]
 }
