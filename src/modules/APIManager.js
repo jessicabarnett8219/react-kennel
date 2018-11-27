@@ -5,8 +5,8 @@ export default class APIManager {
     this.resource = resource
   }
 
-  get(id, method) {
-    return fetch(`${remoteURL}/${this.resource}/${id}`, {
+  get(id, method, ...search) {
+    return fetch(`${remoteURL}/${this.resource}/${id}${search}`, {
       method: method
     })
     .then(data => {data.json()})

@@ -9,6 +9,7 @@ import LocationManager from "../modules/LocationManager"
 import OwnerManager from "../modules/OwnerManager"
 import EmployeeManager from "../modules/EmployeeManager"
 import OwnersAnimalsManager from "../modules/OwnersAnimalsManager"
+import AnimalDetail from './animal/AnimalDetail'
 
 class ApplicationViews extends Component {
 
@@ -37,16 +38,15 @@ class ApplicationViews extends Component {
 
   deleteAnimal = id => {
     AnimalManager.get(id, "DELETE")
-      .then(() => AnimalManager.getAll())
+      .then(() => AnimalManager.all())
       .then(animals => this.setState({
         animals: animals
-      })
-      )
+      }))
   }
 
   deleteEmployee = id => {
-    return EmployeeManager.get(id, "DELETE")
-      .then(() => EmployeeManager.getAll())
+    EmployeeManager.get(id, "DELETE")
+      .then(() => EmployeeManager.all())
       .then(employees => this.setState({
         employees: employees
       })
@@ -54,8 +54,8 @@ class ApplicationViews extends Component {
   }
 
   deleteOwner = id => {
-    return OwnerManager.get(id, "DELETE")
-      .then(() => OwnerManager.getAll())
+    OwnerManager.get(id, "DELETE")
+      .then(() => OwnerManager.all())
       .then(owners => this.setState({
         owners: owners
       })
@@ -76,14 +76,17 @@ class ApplicationViews extends Component {
         <Route exact path="/" render={(props) => {
           return <LocationList locations={this.state.locations} />
         }} />
-        <Route path="/animals" render={(props) => {
-          return <AnimalList deleteAnimal={this.deleteAnimal} animals={this.state.animals} owners_animals={this.state.owners_animals} getAnimalOwners={this.getAnimalOwners} />
-        }} />
         <Route path="/employees" render={(props) => {
-          return <EmployeeList deleteEmployee={this.deleteEmployee} employees={this.state.employees} />
+          return <EmployeeList employees={this.state.employees} />
         }} />
         <Route path="/owners" render={(props) => {
-          return <OwnerList deleteOwner={this.deleteOwner} owners={this.state.owners} />
+          return <OwnerList owners={this.state.owners} />
+        }} />
+        <Route exact path="/animals" render={(props) => {
+          return <AnimalList animals={this.state.animals} deleteAnimal={this.deleteAnimal} owners_animals={this.state.owners_animals} getAnimalOwners={this.getAnimalOwners} />
+        }} />
+        <Route path="/animals/:animalId(\d+)" render={(props) => {
+          return <AnimalDetail {...props} deleteAnimal={this.deleteAnimal} animals={this.state.animals} />
         }} />
       </React.Fragment>
     )
