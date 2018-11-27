@@ -40,7 +40,10 @@ class ApplicationViews extends Component {
   }
 
   // Check if credentials are in local storage
-  isAuthenticated = () => sessionStorage.getItem("credentials") !== null
+  isAuthenticatedSession = () => (sessionStorage.getItem("credentials") !== null)
+
+  isAuthenticatedLocal = () => (localStorage.getItem("credentials") !== null)
+
 
   addAnimal = (animal) => AnimalManager.post(animal)
     .then(() => AnimalManager.getAll())
@@ -87,7 +90,7 @@ class ApplicationViews extends Component {
     return (
       <React.Fragment>
         <Route exact path="/" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.isAuthenticatedSession() || this.isAuthenticatedLocal()) {
             return <LocationList {...props} locations={this.state.locations} />
           }
           else {
@@ -96,7 +99,7 @@ class ApplicationViews extends Component {
         }} />
         <Route path="/login" component={Login} />
         <Route exact path="/employees" render={props => {
-          if (this.isAuthenticated()) {
+          if (this.isAuthenticatedSession() || this.isAuthenticatedLocal()) {
             return <EmployeeList {...props} deleteEmployee={this.deleteEmployee}
               employees={this.state.employees} />
           } else {
@@ -107,16 +110,19 @@ class ApplicationViews extends Component {
           return <EmployeeDetail {...props} employees={this.state.employees} deleteEmployee={this.deleteEmployee} />
         }} />
         <Route path="/owners" render={(props) => {
-          if(this.isAuthenticated()) {
+          if(this.isAuthenticatedSession() || this.isAuthenticatedLocal())  {
           return <OwnerList owners={this.state.owners} /> } else {
             return <Redirect to="/login" />
           }
         }} />
         <Route exact path="/animals" render={(props) => {
+          if (this.isAuthenticatedSession() || this.isAuthenticatedLocal()) {
           return <AnimalList {...props} animals={this.state.animals}
           owners_animals={this.state.owners_animals}
           getAnimalOwners={this.getAnimalOwners}
-          />
+          /> } else {
+            return <Redirect to="/login" />
+          }
         }} />
         <Route path="/animals/new" render={(props) => {
           return <AnimalForm {...props}
