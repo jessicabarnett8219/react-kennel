@@ -100,7 +100,7 @@ class ApplicationViews extends Component {
         <Route path="/login" component={Login} />
         <Route exact path="/employees" render={props => {
           if (this.isAuthenticatedSession() || this.isAuthenticatedLocal()) {
-            return <EmployeeList {...props} deleteEmployee={this.deleteEmployee}
+            return <EmployeeList {...props} animals={this.state.animals} owners_animals={this.state.owners_animals} getAnimalOwners={this.getAnimalOwners} deleteEmployee={this.deleteEmployee}
               employees={this.state.employees} />
           } else {
             return <Redirect to="/login" />
