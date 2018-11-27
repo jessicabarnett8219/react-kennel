@@ -104,7 +104,8 @@ class ApplicationViews extends Component {
           return <AnimalForm {...props}
             animals={this.state.animals}
             addAnimal={this.addAnimal}
-            employees={this.state.employees} />
+            employees={this.state.employees}
+            owners={this.state.owners} />
         }} />
         <Route path="/animals/:animalId(\d+)" render={(props) => {
           return <AnimalDetail {...props} deleteAnimal={this.deleteAnimal} animals={this.state.animals} />
