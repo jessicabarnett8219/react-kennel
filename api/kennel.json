@@ -1,12 +1,14 @@
 {
   "employees": [
     {
-      "id": 2,
-      "name": "Jordan Nelson"
+      "id": 3,
+      "name": "Zoe LeBlanc",
+      "phone": "859-825-8824"
     },
     {
-      "id": 3,
-      "name": "Zoe LeBlanc"
+      "id": 4,
+      "name": "Jessica Beam",
+      "phone": "502-338-0911"
     }
   ],
   "locations": [
@@ -22,21 +24,6 @@
     }
   ],
   "animals": [
-    {
-      "id": 1,
-      "name": "George",
-      "breed": "Golden Retriever"
-    },
-    {
-      "id": 2,
-      "name": "Wally",
-      "breed": "Boston Terrier"
-    },
-    {
-      "id": 3,
-      "name": "Andre",
-      "breed": "Pug"
-    },
     {
       "id": 4,
       "name": "Amigo",
@@ -79,29 +66,9 @@
   ],
   "owners_animals": [
     {
-      "id": 1,
-      "ownerId": 1,
-      "animalId": 1
-    },
-    {
-      "id": 2,
-      "ownerId": 2,
-      "animalId": 2
-    },
-    {
-      "id": 3,
-      "ownerId": 3,
-      "animalId": 3
-    },
-    {
       "id": 4,
       "ownerId": 4,
       "animalId": 4
-    },
-    {
-      "id": 5,
-      "ownerId": 6,
-      "animalId": 1
     }
   ]
 }

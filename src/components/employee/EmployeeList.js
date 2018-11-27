@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 class EmployeeList extends Component {
   render() {
@@ -10,9 +11,7 @@ class EmployeeList extends Component {
             <div key={employee.id}>
               {employee.name}
               <p>
-                <a href="#"
-                  onClick={() => this.props.deleteEmployee(employee.id)}
-                  className="card-link">Delete</a>
+              <Link className="nav-link" to={`/employees/${employee.id}`}>Details</Link>
               </p>
             </div>
           )
