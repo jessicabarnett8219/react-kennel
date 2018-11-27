@@ -30,10 +30,22 @@
       "breed": "Great Dane"
     },
     {
-      "name": "hghg",
-      "breed": "jhgj",
-      "employeeId": 4,
+      "name": "Andre",
+      "breed": "Pug",
+      "employeeId": 3,
       "id": 5
+    },
+    {
+      "name": "Wally",
+      "breed": "Boston Terrier",
+      "employeeId": 4,
+      "id": 6
+    },
+    {
+      "name": "Nelson",
+      "breed": "Scottish Terrier",
+      "employeeId": 3,
+      "id": 7
     }
   ],
   "owners": [
