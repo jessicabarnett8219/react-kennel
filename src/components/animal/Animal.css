@@ -1,13 +1,16 @@
 .animals {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
 }
 
+<<<<<<< HEAD
 .animals {
   display: flex;
   flex-direction: column;
 }
 
+=======
+>>>>>>> master
 .card-row {
   display: flex;
   justify-content: space-evenly;

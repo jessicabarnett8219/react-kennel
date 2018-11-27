@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import dog from "./DogIcon.png"
 import "./Animal.css"
 
 class AnimalList extends Component {
@@ -13,22 +14,27 @@ class AnimalList extends Component {
               this.props.history.push("/animals/new")
             }}>Admit Animal</button>
         </div>
+        <div className="card-row">
         {
           this.props.animals.map(animal =>
-            <div key={animal.id}>
-              <h3>{animal.name}</h3>
-              <Link className="nav-link" to={`/animals/${animal.id}`}>Details</Link>
-              <h5>Owned By:</h5>
-              {this.props.getAnimalOwners(this.props.owners_animals, animal.id)}
+            <div key={animal.id} className="card">
+              <div className="card-body">
+                <h3 className="card-title">
+                  <img src={dog} className="icon--dog"></img>
+                  Pet: {animal.name}
+                  <Link className="nav-link" to={`/animals/${animal.id}`}>Details</Link>
+                </h3>
+                Owned By:<h5>{this.props.getAnimalOwners(this.props.owners_animals, animal.id)}</h5>
+              </div>
             </div>
           )
         }
+        </div>
       </section>
     )
   }
 }
 export default AnimalList
-
 
 
 

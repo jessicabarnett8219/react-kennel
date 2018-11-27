@@ -28,6 +28,31 @@
       "id": 4,
       "name": "Amigo",
       "breed": "Great Dane"
+    },
+    {
+      "name": "Andre",
+      "breed": "Pug",
+      "employeeId": 3,
+      "id": 5
+    },
+    {
+      "name": "Wally",
+      "breed": "Boston Terrier",
+      "employeeId": 4,
+      "id": 6
+    },
+    {
+      "name": "Nelson",
+      "breed": "Scottish Terrier",
+      "employeeId": 3,
+      "id": 7
+    },
+    {
+      "name": "Doug",
+      "breed": "Corgi",
+      "employeeId": 4,
+      "ownerId": 3,
+      "id": 8
     }
   ],
   "owners": [

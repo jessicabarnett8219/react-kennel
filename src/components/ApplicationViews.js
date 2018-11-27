@@ -113,15 +113,17 @@ class ApplicationViews extends Component {
           }
         }} />
         <Route exact path="/animals" render={(props) => {
-          if(this.isAuthenticated()) {
-          return <AnimalList animals={this.state.animals} owners_animals={this.state.owners_animals} getAnimalOwners={this.getAnimalOwners} /> } else {
-            return <Redirect to="/login" />
-          }
+          return <AnimalList {...props} animals={this.state.animals}
+          owners_animals={this.state.owners_animals}
+          getAnimalOwners={this.getAnimalOwners}
+          />
         }} />
         <Route path="/animals/new" render={(props) => {
           return <AnimalForm {...props}
+            animals={this.state.animals}
             addAnimal={this.addAnimal}
-            employees={this.state.employees} />
+            employees={this.state.employees}
+            owners={this.state.owners} />
         }} />
         <Route path="/animals/:animalId(\d+)" render={(props) => {
           return <AnimalDetail {...props} deleteAnimal={this.deleteAnimal} animals={this.state.animals} />
