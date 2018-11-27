@@ -12,9 +12,6 @@ class EmployeeList extends Component {
               {employee.name}
               <p>
               <Link className="nav-link" to={`/employees/${employee.id}`}>Details</Link>
-                <a href="#"
-                  onClick={() => this.props.deleteEmployee(employee.id)}
-                  className="card-link">Delete</a>
               </p>
             </div>
           )
